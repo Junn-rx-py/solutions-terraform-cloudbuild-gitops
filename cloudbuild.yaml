@@ -1,6 +1,6 @@
 steps:
   - id: 'terraform init' # Added an ID for clarity
-    name: 'hashicorp/terraform:1.2.0' # Or desired Terraform version
+    name: 'hashicorp/terraform:1.0.0' # Or desired Terraform version
     entrypoint: 'sh'
     args:
       - '-c'
@@ -11,12 +11,12 @@ steps:
                         -backend-config="prefix=terraform/state"
 
   - id: 'terraform plan' # Added an ID for clarity
-    name: 'hashicorp/terraform:1.2.0' # Or desired Terraform version
+    name: 'hashicorp/terraform:1.0.0' # Or desired Terraform version
     entrypoint: 'sh' # Added entrypoint for running shell commands
     args: ['-c', 'cd environments/dev && terraform plan -out=tfplan'] # Navigate and plan
 
   - id: 'terraform apply' # Added an ID for clarity
-    name: 'hashicorp/terraform:1.2.0' # Or desired Terraform version
+    name: 'hashicorp/terraform:1.0.0' # Or desired Terraform version
     entrypoint: 'sh'
     args:
       - '-c'
