@@ -38,3 +38,8 @@ options:
 # For simplicity, directly using 'environments/dev' is fine for now.
 substitutions:
   _TF_ROOT: 'environments/dev' # Points to where your main.tf is
+
+availableSecrets:
+  secretManager:
+    - versionName: projects/tipo168/secrets/app-db-credentials/versions/latest
+      env: 'TF_VAR_db_password'
